@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Plant Hub PH</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/9b0227d945.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1 id="mobile1">the plant hub ph</h1>
+			<i class="fas fa-shopping-cart" id="shoppingcart" onclick="cartshowFunction()"></i>
+            <ul>
+                <li class="mobile2">Shop</li>
+                <li class="mobile2">Visit Us</li>
+                <li onclick="aboutusFunction()" id="mobile3">About Us</li>
+                <li class="mobile2">Contact Us</li>
+            </ul>  
+        </div>
+        <div id="pick">
+            <h1>Search by Category:</h1>
+            <ul>
+                <li class="mobile4" onclick="aloFunction()">Alocasia</li>
+                <li class="mobile5" onclick="anthuFunction()">Anthurium</li>
+                <li class="mobile6" onclick="aglaoFunction()">Aglaonema</li>
+                <li class="mobile7" onclick="philoFunction()">Philodendron</li>
+            </ul>
+        </div>
+        <button id = "returnbut" onclick = "retFunction()">Exit View</button>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://naturecanada.ca/wp-content/uploads/2015/11/field-858650_1280.png" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.sanfranciscoflorist.com/uploads/pics/content/210/KB3A9227-1.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.healthytrees.com/wp-content/uploads/2017/10/preview-lightbox-diversity-3-1000x300.jpg" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div id="disclaimer">
+            <p>All plants come in a plain, white pot. Thank you for choosing The Plant Hub PH.</p>
+        </div>
+        <container>
+            <br>
+            <div id="checkouttable">
+                    <table class="table table-dark table-hover thead-dark" id="checktable">
+                        <tr class="bg-info">
+                            <th id="tieych"></th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th class="red">Remove</th>
+                        </tr>
+            
+                <tbody id="myTable">
+                    
+                </tbody>
+            </table><br>
+            <div id="checkoutform">
+                <p onclick="dissolveFunction()">X</p>
+                <h1>The Plant Hub PH | Shopping Cart</h1>
+                <hr>
+                <form method="post" action="http://savantandsparktest.ml/checkout.php">
+                    <label for="cust_name">Name:</label><br>
+                    <input type="text" name="cust_name" placeholder="Please input your name..."><br>
+                    <label for="cust_email">Email Address:</label><br>
+                    <input type="text" name="cust_email" placeholder="Please input your email..."><br>
+                    <label for="cust_addr">Address</label><br>
+                    <input type="text" name="cust_addr" placeholder="Please input your address...">
+                    <input type="hidden" name="cust_order" value="" id="custorder"><br><br>
+                    <input type="submit" onclick="toStringFunction()" id="submit"><br><br>
+                </form>
+                <button onclick="buildTable(custorder)">Refresh Table</button>
+            </div>
+            </div>
+        </container>
+        <container>
+        <div id="alocontain" class="container">
+            <h1>ALOCASIA</h1>
+            <hr>
+            <div class = "alocasia1" id="plantproduct" onclick="plantFunction1()">
+                <img src="https://i.pinimg.com/originals/f3/e0/43/f3e04394af4460d6f70af9ad885d6571.jpg" alt="micholitziana">
+                <h2>Micholitziana</h2>
+                <h3>299.99</h3>
+            </div>
+            <div class = "alocasia2" id="plantproduct" onclick="plantFunction2()">
+                <img src="https://i.pinimg.com/originals/10/ca/13/10ca130ec0e859c2c6447e52c37f58fb.png" alt="amazonica">
+                <h2>Amazonica</h2>
+                <h3>599.99</h3>
+            </div>
+            <div class = "alocasia3" id="plantproduct" onclick="plantFunction3()">
+                <img src="https://i.pinimg.com/originals/0e/e7/39/0ee739aa5d0ccea7f1c0ebe358fd2cd1.png" alt="zebrina">
+                <h2>Zebrina</h2>
+                <h3>249.99</h3>
+            </div><br class="beear">
+            <div class = "alocasia4" id="plantproduct" onclick="plantFunction4()">
+                <img src="https://images.squarespace-cdn.com/content/v1/57dcb9d4d2b857cdadff1630/1604976362609-XHBSSDR27T9DR15S5ENQ/ke17ZwdGBToddI8pDm48kOq4zFX7_foHOnXnRBNkpdB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdHQaX1V1XHF7EOk_Phcj2WYjCYFHvMhwc-3KYw9vNREKSn_0YgxmSVcJk_fmOGYGA/IMG_0193.JPG?format=1000w" alt="reginula">
+                <h2>Reginula</h2>
+                <h3>549.99</h3>
+            </div>
+            <div class = "alocasia5" id="plantproduct" onclick="plantFunction5()">
+                <img src="https://www.cowellsgc.co.uk/files/images/webshop/alocasia-bambino-arrow-1589438422_l.jpg" alt="bambino">
+                <h2>Bambino</h2>
+                <h3>449.99</h3>
+            </div>
+            <div class = "alocasia6" id="plantproduct" onclick="plantFunction6()">
+                <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/IMG_4956_1000x.jpg?v=1618725500" alt="silver-dragon">
+                <h2>Silver Dragon</h2>
+                <h3>3249.99</h3>
+            </div>
+        </div>
+        <div id="anthucontain" class="container">
+            <h1>ANTHURIUM</h1>
+            <hr>
+            <div class = "anthurium1" id="plantproduct" onclick="plantFunction7()">
+                <img src="https://filebroker-cdn.lazada.com.ph/kf/He8fd81140d8b4488a311289f1e2a90e3C.jpg" alt="magnificum">
+                <h2>Magnificum</h2>
+                <h3>1499.99</h3>
+            </div>
+            <div class = "anthurium2" id="plantproduct" onclick="plantFunction8()">
+                <img src="https://static.wixstatic.com/media/0906d2_194040e20128495dabcc852ba9570917~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85/0906d2_194040e20128495dabcc852ba9570917~mv2.jpg" alt="crystallinum">
+                <h2>Crystallinum</h2>
+                <h3>1999.99</h3>
+            </div>
+            <div class = "anthurium3" id="plantproduct" onclick="plantFunction9()">
+                <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_0053_1000x1000.jpg?v=1617226231" alt="regale">
+                <h2>Regale</h2>
+                <h3>24999.99</h3>
+            </div><br class="beear">
+            <div class = "anthurium4" id="plantproduct" onclick="plantFunction10()">
+                <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/image0_f282bf76-b131-4809-abf9-dd4fdafabb9e_1000x1000.jpg?v=1621077381" alt="luxurians">
+                <h2>Luxurians</h2>
+                <h3>11999.99</h3>
+            </div>
+            <div class = "anthurium5" id="plantproduct" onclick="plantFunction11()">
+                <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_4825_1000x1000.jpg?v=1619207552" alt="warocqueanum">
+                <h2>Warocqueanum</h2>
+                <h3>19999.99</h3>
+            </div>
+            <div class = "anthurium6" id="plantproduct" onclick="plantFunction12()">
+                <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_0099_1000x1000.jpg?v=1617241704" alt="veitchii">
+                <h2>Veitchii</h2>
+                <h3>19999.99S</h3>
+            </div>
+        </div>
+        <div id="aglocontain" class="container">
+            <h1>AGLAONEMA</h1>
+            <hr>
+            <div class = "aglaonema1" id="plantproduct" onclick="plantFunction13()">
+                <img src="https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Kent-35-3265.035-BL_aglaonema-silver-bay-10.jpg?v=1605964905" alt="silver-bay">
+                <h2>Silver Bay</h2>
+                <h3>349.99</h3>
+            </div>
+            <div class = "aglaonema2" id="plantproduct" onclick="plantFunction14()">
+                <img src="https://www.bookmyflowers.com/image/cache/catalog/Valentine2019/PLANT356-1000x1000.jpg" alt="red-lipstick">
+                <h2>Red Lipstick</h2>
+                <h3>299.99</h3>
+            </div>
+            <div class = "aglaonema3" id="plantproduct" onclick="plantFunction15()">
+                <img src="https://cf.shopee.ph/file/a063905d6977a96c9480da86b1fe173f" alt="snow-white">
+                <h2>Snow White</h2>
+                <h3>399.99</h3>
+            </div><br class="beear">
+            <div class = "aglaonema4" id="plantproduct" onclick="plantFunction16()">
+                <img src="https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-6_Aglaonema-Pink-Moon-6.jpg?v=1562787232" alt="pink-moon">
+                <h2>Pink Moon</h2>
+                <h3>249.99</h3>
+            </div>
+            <div class = "aglaonema5" id="plantproduct" onclick="plantFunction17()">
+                <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/BmwLLLjyFc.jpg?v=1577864689" alt="super-red">
+                <h2>Super Red</h2>
+                <h3>599.99</h3>
+            </div>
+            <div class = "aglaonema6" id="plantproduct" onclick="plantFunction18()">
+                <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/tnTR5r1Qwl.jpg?v=1577864692" alt="rising-star">
+                <h2>Rising Star</h2>
+                <h3>449.99</h3>
+            </div>
+        </div>
+        <div id="philocontain" class="container">
+            <h1>PHILODENDRON</h1>
+            <hr>
+            <div class = "philo1" id="plantproduct" onclick="plantFunction19()">
+                <img src="https://images.squarespace-cdn.com/content/v1/56091b78e4b09e2b03426d22/1612262620562-C9Q035KSGIOSLAD872ZO/ke17ZwdGBToddI8pDm48kNTFyhaZWgcEkc1Nf9VvSot7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTVYLQChzNJxORaBJ6gzGXqMSBTuWglWFGBeLIcVpkxyIuBd_R5uoqwXmwCSWpgmeg/Philodendron+gloriosum.JPG" alt="gloriosum">
+                <h2>Gloriosum</h2>
+                <h3>$24.99</h3>
+            </div>
+            <div class = "philo2" id="plantproduct" onclick="plantFunction20()">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzBb8GBWIjQT4PbIa0w76hqYR4XWqW0VGQmQ&usqp=CAU" alt="melanochrysum">
+                <h2>Melanochrysum</h2>
+                <h3>$9.99</h3>
+            </div>
+            <div class = "philo3" id="plantproduct" onclick="plantFunction21()">
+                <img src="https://i.pinimg.com/originals/9d/17/51/9d17510ae1b976a6b1f8642fd9fe226c.png" alt="verrucosum">
+                <h2>Verrucosum</h2>
+                <h3>$29.99</h3>
+            </div><br class="beear">
+            <div class = "philo4" id="plantproduct" onclick="plantFunction22()">
+                <img src="https://i.pinimg.com/originals/04/95/ab/0495ab0c93876f3b71285e3b66a8ca02.jpg" alt="prince-of-orange">
+                <h2>Prince of Orange</h2>
+                <h3>$24.99</h3>
+            </div>
+            <div class = "philo5" id="plantproduct" onclick="plantFunction23()">
+                <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_5037_1000x1000.jpg?v=1619208622" alt="dark-lord">
+                <h2>Dark Lord</h2>
+                <h3>$9.99</h3>
+            </div>
+            <div class = "philo6" id="plantproduct" onclick="plantFunction24()">
+                <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/products/Philodendron-Pink-Princess-Grow-Pot-Small_1000x1000.jpg?v=1619694130" alt="pink-princess">
+                <h2>Pink Princess</h2>
+                <h3>$29.99</h3>
+            </div>
+        </div>
+        <div id = "footer">
+            <div id="line">|</div>
+            <h1>The Plant Hub Ph</h1>
+            <h2>Francisco Homes Entrance, Quirino Highway, San Jose del Monte Bulacan</h2>
+            <h3>Contact: 09550123842 / 09109971813</h3>
+        </div>
+        </container>
+        <container>
+        <div id="overlaypp1" class="overlay">
+            <img src="https://i.pinimg.com/originals/f3/e0/43/f3e04394af4460d6f70af9ad885d6571.jpg" alt="Alocasia micholitziana">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia micholitziana</h2><br>
+            <h3 id = "plantprice">299.99</h3><hr>
+            <h4>A stunning species with deep velvet green leaves overlaid with snow white veins. 
+                A large grower that can reach up to 3' tall. 
+                Can be used temporarily in larger terrariums or makes a great houseplant.
+                 Likes higher humidity and low light. 
+                 Available plants are very young, growing in 2-3" pots.</h4><br><br>
+            <button onclick="addcartFunction1()">Add to Cart</button>
+        </div>
+        <div id="overlaypp2" class="overlay">
+            <img src="https://i.pinimg.com/originals/10/ca/13/10ca130ec0e859c2c6447e52c37f58fb.png" alt="Alocasia amazonica">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia amazonica</h2><br>
+            <h3>599.99</h3><hr>
+            <h4>A stunning species with knife-like leaf edges with a white border.
+                A large grower that can reach up to 2' tall. 
+                Can be used temporarily in larger terrariums or makes a great houseplant.
+                Likes higher humidity and bright indirect light. 
+                Available plants are 6 to 9 inches tall.</h4><br><br>
+            <button onclick="addcartFunction2()">Add to Cart</button>
+        </div>
+        <div id="overlaypp3" class="overlay">
+            <img src="https://i.pinimg.com/originals/0e/e7/39/0ee739aa5d0ccea7f1c0ebe358fd2cd1.png" alt="Alocasia zebrina">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia zebrina</h2><br>
+            <h3>249.99</h3><hr>
+            <h4>This plant is unique due to its zebra-like petioles.
+                An extremely large grower that can reach up to 5' tall. 
+                Likes bright indirect light. Suitable for indoor
+                or outdoor setting. Available plants are 8 - 12 inches tall.</h4><br><br>
+            <button onclick="addcartFunction3()">Add to Cart</button>
+        </div>
+        <div id="overlaypp4" class="overlay">
+            <img src="https://images.squarespace-cdn.com/content/v1/57dcb9d4d2b857cdadff1630/1604976362609-XHBSSDR27T9DR15S5ENQ/ke17ZwdGBToddI8pDm48kOq4zFX7_foHOnXnRBNkpdB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdHQaX1V1XHF7EOk_Phcj2WYjCYFHvMhwc-3KYw9vNREKSn_0YgxmSVcJk_fmOGYGA/IMG_0193.JPG?format=1000w" alt="Alocasia reginula">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia reginula</h2><br>
+            <h3>549.99</h3><hr>
+            <h4>This plant has velvety leaves that can grow up to 1ft. 
+                in length. Can also grow up to 12 inches in width. This 
+                plant likes bright indirect light and never direct light.
+                This can survive up to 1 week without water. Available plants
+                are 4 - 5 inches tall.
+            </h4><br><br>
+            <button onclick="addcartFunction4()">Add to Cart</button>
+        </div>
+        <div id="overlaypp5" class="overlay">
+            <img src="https://www.cowellsgc.co.uk/files/images/webshop/alocasia-bambino-arrow-1589438422_l.jpg" alt="Alocasia bambino">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia bambino</h2><br>
+            <h3>449.99</h3><hr>
+            <h4>This plant is a fast grower, putting 1 - 2 leaves
+                out per week. It has small leaves about 2 - 4 inches long.
+                This plant likes bright indirect light. Available plants
+                are 4 - 5 inches tall. 
+            </h4><br><br>
+            <button onclick="addcartFunction5()">Add to Cart</button>
+        </div>
+        <div id="overlaypp6" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/IMG_4956_1000x.jpg?v=1618725500" alt="Alocasia silver dragon">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Alocasia silver dragon</h2><br>
+            <h3>3249.99</h3><hr>
+            <h4>This plant is unique due to velvety leaves partenered
+                with its unique color. This plant similar to the 
+                Alocasia reginula, as they are both jewel alocasias.
+                Available plants are 6 - 7 inches tall.
+            </h4><br><br>
+            <button onclick="addcartFunction6()">Add to Cart</button>
+        </div>
+        <div id="overlaypp7" class="overlay">
+            <img src="https://filebroker-cdn.lazada.com.ph/kf/He8fd81140d8b4488a311289f1e2a90e3C.jpg" ALT="Anthurium magnificum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium magnificum</h2><br>
+            <h3>1499.99</h3><hr>
+            <h4>This plant has velvety foliage with stunning veins 
+                that contrast with the leaves. Perfect for an
+                Anthurium beginner and even pros. Available plants
+                are 8 - 12 inches tall with 3 - 4 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction7()">Add to Cart</button>
+        </div>
+        <div id="overlaypp8" class="overlay">
+            <img src="https://static.wixstatic.com/media/0906d2_194040e20128495dabcc852ba9570917~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85/0906d2_194040e20128495dabcc852ba9570917~mv2.jpg" alt="Anthurium crystallinum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium crystallinum</h2><br>
+            <h3>1999.99</h3><hr>
+            <h4>This plant has velvety foliage with stunning veins 
+                that contrast with the leaves. This plant has thicker
+                veins than the Magnificum, making it stand out even more.
+                Plants available are the dark forms and are 6 - 9 inches tall
+                with 2 - 4 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction8()">Add to Cart</button>
+        </div>
+        <div id="overlaypp9" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_0053_1000x1000.jpg?v=1617226231" alt="Anthurium regale">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium regale</h2><br>
+            <h3>24999.99</h3><hr>
+            <h4>This plant is extremely rare and extremely stunning.
+                This plant is imported from Equador (with permits) and 
+                is in limited stocks. This is a perfect addition
+                for your plant collection, and is sure to stand out with
+                its giant leaves and excellent veining. Plants available are 
+                2 - 4 feet in height and has 1 - 2 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction9()">Add to Cart</button>
+        </div>
+        <div id="overlaypp10" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/image0_f282bf76-b131-4809-abf9-dd4fdafabb9e_1000x1000.jpg?v=1621077381" alt="Anthurium luxurians">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium luxurians</h2><br>
+            <h3>11999.99</h3><hr>
+            <h4>This unique plant has a scale-like texture. It is imported
+                from Equador (with permits) and is in limited stocks. Buy
+                now to impress your friends or to add to your collection. Plants
+                available are 5 - 7 inches tall with 2 - 4 leaves with occasional flowers.
+            </h4><br><br>
+            <button onclick="addcartFunction10()">Add to Cart</button>
+        </div>
+        <div id="overlaypp11" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_4825_1000x1000.jpg?v=1619207552" alt="Anthurium warocqueanum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium warocqueanum</h2><br>
+            <h3>19999.99</h3><hr>
+            <h4>This plant is extremely rare and is called the queen 
+                anthurium. It can grow leaves with lengths of 2 feet or greater.
+                This has many forms, but the available form is the regular one.
+                Available plants are only juveniles, but with proper care, it
+                can grow as large as you. Plants available are 8 - 10 inches long
+                with 2 - 4 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction11()">Add to Cart</button>
+        </div>
+        <div id="overlaypp12" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_0099_1000x1000.jpg?v=1617241704" alt="Anthurium veitchii">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Anthurium veitchii</h2><br>
+            <h3>19999.99</h3><hr>
+            <h4>This plant is extremely rare and is called the king anthurium.
+                It can grow leaves with lengths of 2 feet or greater. 
+                Available plants are only juveniles, but with proper care, it
+                can grow as large as you. Plants available are 8 - 10 inches long
+                with 2 - 4 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction12()">Add to Cart</button>
+        </div>
+        <div id="overlaypp13" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Kent-35-3265.035-BL_aglaonema-silver-bay-10.jpg?v=1605964905" alt="Aglaonema silver bay">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema silver bay</h2><br>
+            <h3>349.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 2 - 4 feet 
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction13()">Add to Cart</button>
+        </div>
+        <div id="overlaypp14" class="overlay">
+            <img src="https://www.bookmyflowers.com/image/cache/catalog/Valentine2019/PLANT356-1000x1000.jpg" alt="Aglaonema red lipstick">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema red lipstick</h2><br>
+            <h3>299.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 9 - 12 inches
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction14()">Add to Cart</button>
+        </div>
+        <div id="overlaypp15" class="overlay">
+            <img src="https://cf.shopee.ph/file/a063905d6977a96c9480da86b1fe173f" alt="Aglaonema snow white">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema snow white</h2><br>
+            <h3>399.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 6 - 9 inches
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction15()">Add to Cart</button>
+        </div>
+        <div id="overlaypp16" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-6_Aglaonema-Pink-Moon-6.jpg?v=1562787232" alt="Aglaonema pink moon">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema pink moon</h2><br>
+            <h3>249.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 6 - 9 inches
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction16()">Add to Cart</button>
+        </div>
+        <div id="overlaypp17" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/BmwLLLjyFc.jpg?v=1577864689" alt="Aglaonema super red">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema super red</h2><br>
+            <h3>599.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 5 - 8 inches
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction17()">Add to Cart</button>
+        </div>
+        <div id="overlaypp18" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0248/9837/1618/products/tnTR5r1Qwl.jpg?v=1577864692" alt="Aglaonema rising star">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Aglaonema rising star</h2><br>
+            <h3>449.99</h3><hr>
+            <h4>This plant can survive dry conditions up to 1 week.
+                Perfect for beginners and is a perfect addition to
+                your plant corner. Plants available are 5 - 8 inches
+                in height.
+            </h4><br><br>
+            <button onclick="addcartFunction18()">Add to Cart</button>
+        </div>
+        <div id="overlaypp19" class="overlay">
+            <img src="https://images.squarespace-cdn.com/content/v1/56091b78e4b09e2b03426d22/1612262620562-C9Q035KSGIOSLAD872ZO/ke17ZwdGBToddI8pDm48kNTFyhaZWgcEkc1Nf9VvSot7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTVYLQChzNJxORaBJ6gzGXqMSBTuWglWFGBeLIcVpkxyIuBd_R5uoqwXmwCSWpgmeg/Philodendron+gloriosum.JPG" alt="Philodendron gloriosum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron gloriosum</h2><br>
+            <h3>2499.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It crawls the ground. Available plants are
+                8 - 10 inches tall with 2 - 3 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction19()">Add to Cart</button>
+        </div>
+        <div id="overlaypp20" class="overlay">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzBb8GBWIjQT4PbIa0w76hqYR4XWqW0VGQmQ&usqp=CAU" alt="Philodendron melanochrysum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron melanochrysum</h2><br>
+            <h3>3499.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It crawls upward. Available plants are
+                5 - 8 inches tall with 2 - 3 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction20()">Add to Cart</button>
+        </div>
+        <div id="overlaypp21" class="overlay">
+            <img src="https://i.pinimg.com/originals/9d/17/51/9d17510ae1b976a6b1f8642fd9fe226c.png" alt="Philodendron verrucosum">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron verrucosum</h2><br>
+            <h3>7499.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It crawls upward. Available plants are
+                4 - 7 inches tall with 2 - 3 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction21()">Add to Cart</button>
+        </div>
+        <div id="overlaypp22" class="overlay">
+            <img src="https://i.pinimg.com/originals/04/95/ab/0495ab0c93876f3b71285e3b66a8ca02.jpg" alt="Philodendron prince of orange">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron prince of orange</h2><br>
+            <h3>5499.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It does not crawl, but it constantly produces
+                large, glossy leaves, with the new ones being
+                a bright orange. Plants available have leaves
+                with length of 9 - 12 inches long and with
+                5 - 7 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction22()">Add to Cart</button>
+        </div>
+        <div id="overlaypp23" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0396/1592/2342/products/IMG_5037_1000x1000.jpg?v=1619208622" alt="Philodendron dark lord">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron dark lord</h2><br>
+            <h3>3499.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It crawls upward. Available plants are
+                4 - 7 inches tall with 2 - 3 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction23()">Add to Cart</button>
+        </div>
+        <div id="overlaypp24" class="overlay">
+            <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/products/Philodendron-Pink-Princess-Grow-Pot-Small_1000x1000.jpg?v=1619694130" alt="Philodendron pink princess">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h2 id = "plantname">Philodendron pink princess</h2><br>
+            <h3>12999.99</h3><hr>
+            <h4>This plant can grow large, beautiful leaves.
+                It crawls upward. Available plants are
+                4 - 7 inches tall with 2 - 3 leaves.
+            </h4><br><br>
+            <button onclick="addcartFunction24()">Add to Cart</button>
+        </div>
+        <div id="aboutus">
+            <h5 onclick = "returnFunction()">X</h5>
+            <h1>About Us</h1>
+            <hr>
+            <h2 id="marf">GONZALES, Marithe Ianne</h2>
+            <hr id ="division">
+            <h3>
+                Hi! I'm Marithe Gonzales and I helped code the mobile responsiveness of our project website. I like singing, listening to music and scrolling aimlessly on social media. We hope you have a great shopping experience.
+            </h3>
+            <h2 id="lans">VILLAFLORES, Lance Gabriel</h2>
+            <hr id ="division">
+            <h3>
+                Hi! I'm Lance Villaflores and I coded the css and javascript for our project website. I like plants which is reflected on our website. Currently, I have about 100 plants and I want to add more. We hope you have a great shopping experience.
+            </h3>
+        </div>
+        </container>
+        <script>
+            function removeFunction(){
+                var index = 0;
+                var table = document.getElementById("myTable");
+                for (var i = 0; i < table.rows.length; i++){
+                    table.rows[i].cells[3].onclick = function(){
+                    index = this.rowIndex;
+                    table.deleteRow(index);
+                    console.log(index);
+                    custorder.splice(index, 1);
+                };
+            }
+        }
+        buildTable(custorder)
+
+        function buildTable(data){
+        var x = "";
+        document.getElementById('myTable').innerHTML = x;
+        var table = document.getElementById('myTable')
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+                        <td>${[i + 1]}</td>
+                        <td>${data[i].prod_name}</td>
+                        <td>${data[i].prod_price}</td>
+                        <td id="red" onclick="removeFunction()">Remove</td>
+                        </tr>`
+            table.innerHTML += row
+        }
+    }
+        </script>
+    </body>
+</html>
